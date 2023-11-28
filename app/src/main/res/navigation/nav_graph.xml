@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/startFragment">
+
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.app.kuzhellist.fragments.StartFragment"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start" >
+        <action
+            android:id="@+id/action_startFragment_to_detailFragment2"
+            app:destination="@id/detailFragment" />
+        <argument
+            android:name="animal"
+            app:argType="com.app.kuzhellist.ModelOfAnimal" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.app.kuzhellist.fragments.InfoFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_info" >
+
+        <action
+            android:id="@+id/action_detailFragment_to_startFragment"
+            app:destination="@id/startFragment" />
+        <argument
+            android:name="animal"
+            app:argType="com.app.kuzhellist.ModelOfAnimal" />
+    </fragment>
+</navigation>
